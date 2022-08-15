@@ -1,0 +1,282 @@
+/*###################################################### CONFIG GERAIS ######################################################*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(240, 235, 235);
+}
+
+
+/*###################################################### NAV ######################################################*/
+.logo{
+    width: 113px;
+    height: 50px;
+    border: 1px solid #e9d636;
+    text-align: center;
+    color: #e9d636;
+    padding: 10px;
+    
+}
+
+header nav a label{
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+    position: relative;
+}
+
+header nav a label:hover{
+    opacity: 0.5;
+}
+
+header nav a{
+    text-decoration: none;
+
+}
+
+header, nav{
+    width: 100vw;
+    height: 60px;
+    background-color: #1d3340;
+    position: fixed;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+
+
+.modalpopup{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0,0,0,0.0);
+    display: none;
+ 
+}
+
+@keyframes modalanim{
+    from{
+        transform: translate(0, -20px);
+    }
+    to{
+        transform: translate(0,0);
+    }
+}
+
+.modalpopup{
+    animation: modalanim .3s;
+}
+
+.popup{
+    width: 250px;
+    height: 150px;
+    position: absolute;
+    background-color: #1d3340;
+    top: 62px;
+    right: 5px;
+    flex-direction: column;
+    gap: 2rem;
+    display: flex;
+
+}
+
+
+.popup a{
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.popup a:first-child{
+    margin-top: 8px;
+}
+
+.popup a:hover{
+    opacity: 0.5;
+}
+
+/*###################################################### MAIN ######################################################*/
+
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 100px;
+    background-color: rgb(240, 235, 235);
+    GAP: 3rem;
+
+
+}
+
+.painelinfo{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    height: 180px;
+    padding: 0 10px;
+    box-shadow: 0px 0px 0px 5px #ccc;
+    margin: 0 auto;
+}
+
+
+
+.painelinfo:hover{
+    cursor: pointer;
+    opacity: 0.6;
+
+}
+
+.painelinfo label:nth-child(1){
+    margin: 10px auto;
+}
+
+.painelinfo label:nth-child(n):hover{
+    cursor: pointer;
+}
+
+.link-card{
+    width: 250px;
+    height: 180px;
+    text-decoration: none;
+    margin: 0 auto;
+}
+
+/*###################################################### MODAL MATRICULAR ######################################################*/
+
+.modal-matricular{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.win-matricular{
+    width: 70vw;
+    height: 60vh;
+    background-color: rgb(240, 235, 235);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.close-button{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #1d3340;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: 0 0 0 5px #1d3340;
+    text-align: center;
+    text-decoration: none;
+    color: #e9d636;
+    font: bolder;
+    background-color: #1d3340;
+    font-size: 20px;
+    line-height: 0.7;
+}
+
+.close-button:hover{
+    box-shadow: 0 0 0 5px #1d334080;
+}
+
+@keyframes modalMatric{
+    from{
+
+        transform: translate(100%, 0);
+    }
+    to{
+        transform: translate(0, 0);
+    }
+}
+
+.win-matricular{
+    animation: modalMatric .8s;
+}
+
+/*###################################################### MODAL CADASTRAR ######################################################*/
+
+
+.modal-cadastrar{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.win-cadastrar{
+    width: 70vw;
+    height: 60vh;
+    background-color: rgb(240, 235, 235);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.close-button2{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #1d3340;;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: 0 0 0 5px #1d3340;
+    text-align: center;
+    text-decoration: none;
+    color: #e9d636;
+    font: bolder;
+    background-color: #1d3340;
+    font-size: 20px;
+    line-height: 0.7;
+}
+
+.close-button2:hover{
+    box-shadow: 0 0 0 5px #1d334080;
+}
+
+@keyframes modalMatric{
+    from{
+
+        transform: translate(100%, 0);
+    }
+    to{
+        transform: translate(0, 0);
+    }
+}
+
+.win-cadastrar{
+    animation: modalMatric .8s;
+}
