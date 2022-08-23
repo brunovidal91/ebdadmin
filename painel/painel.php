@@ -10,6 +10,7 @@ require_once("../mysql/conect.php")
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EBD-Admin - Painel Administrativo</title>
     <link rel="stylesheet" href="style-painel.css">
+    
 
 </head>
 <body>
@@ -17,6 +18,13 @@ require_once("../mysql/conect.php")
     <header>
         <nav>
             <div class="logo">LOGO</div>
+            <div class="drop">
+                <a href="" id="drop">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+                </a>
+            </div>
             <a href="#" id="popupActive"><label>Nome Sobrenome</label></a>
         </nav>
     </header>
@@ -86,9 +94,16 @@ require_once("../mysql/conect.php")
     
     <div class="modalpopup" id="modalpopup">
         <div class="popup" id="popup">
-            <a href="#" onclick="openModalMatricular()">Matricular</a>
-            <a href="#" onclick="openModalCadastrar()">Cadastrar Usuário</a>
-            <a href="#">Sair</a>
+            
+            <div class="mat">
+                <a href="#" onclick="openModalMatricular()"><img src="../img/graduated.png" width="25px"><span>Matricular</span></a>
+            </div>
+
+            <div class="cad-user">
+                <a href="#" onclick="openModalCadastrar()"><img src="../img/add-contact.png" width="25px"><span>Cadastrar Usuário</span></a>
+            </div>
+
+                <a href="#">Sair</a>
         </div>
     </div>
 

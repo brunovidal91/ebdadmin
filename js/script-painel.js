@@ -1,7 +1,15 @@
 const popupActive = document.getElementById('popupActive')
 const popup = document.getElementById('popup')
 const modalpopup = document.getElementById("modalpopup")
+const drop = document.getElementById('drop')
 
+
+
+drop.addEventListener('click', ()=>{
+    modalpopup.style.display = "flex";
+  
+    
+})
 
 popupActive.addEventListener('click', ()=>{
     modalpopup.style.display = "flex";
@@ -18,6 +26,7 @@ modalpopup.addEventListener('click', function(e){
 
     }
 })
+
 
 
 function openModalMatricular(){

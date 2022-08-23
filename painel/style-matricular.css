@@ -12,41 +12,117 @@
     border: 1px solid #ccc;
     display: flex;
     justify-content: center;
+    
 
 }
 
 form{
     width: 90%;
     height: 100%;
-    padding: 20px;
+    padding: 2px;
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
+    
 }
+
 
 form input, select{
-    font-size: 1.0em;
-    margin-bottom: 5%;
-    margin-right: 3%;
-    padding: 5px 25px;
+    width: 80%;
+    padding: 8px;
     text-align: center;
-    outline: none;
+    display: block;
+
 }
 
-form input[type="date"]{
-
-    margin-bottom: 1%;
+form label{
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 form input[type="submit"]{
-
-    border: none;
-    border-radius: 8px;
-    color:  #e9d636;
-    background-color: #1d3340;
-    margin-top: 1%;
+    margin: 150px auto;
+    background-color:  #1d3340;
+    color: #e9d636;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 25%;
+    height: 15%;
+    padding: 5px;
 }
 
 form input[type="submit"]:hover{
     cursor: pointer;
-    opacity: 0.8;
-    color: #efd636;;
+    opacity: 0.85;
+    transition: .5s;
+}
+
+
+
+.container1, .container2{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container1{
+    border-right: 1px solid #ccc;
+}
+
+@media (max-width: 700px){
+
+    .form-container{
+        border: none;
+    }
+
+    form{
+
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0;
+        flex-wrap: nowrap;
+        gap: 0
+    }
+
+    form input, select{
+        margin: 10px auto;
+        width: 100%;
+        padding: 8px;
+
+    }
+
+    form input[type="text"]{
+
+        width: 85%;
+
+    }
+
+    form label{
+        margin: 3px auto;
+    }
+
+    .container2 input[type="date"]{
+        width: 50%;
+    }
+
+    form input[type="submit"]{
+        margin: 20px auto;
+        background-color:  #1d3340;
+        color: #e9d636;
+        border-radius: 10px;
+        font-weight: bold;
+        width: 25%;
+        height: 15%;
+        padding: 5px;
+    }
+
+    .container1{
+        border-right: none;
+    }
+
 }

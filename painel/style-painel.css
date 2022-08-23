@@ -25,6 +25,27 @@ body{
     
 }
 
+.drop{
+    
+    width: 40px;
+    height:40px;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.line{
+    width: 50%;
+    height: 2px;
+    background-color: white;
+    margin-bottom: 5px;
+
+}
+
 header nav a label{
     color: white;
     cursor: pointer;
@@ -89,16 +110,17 @@ nav{
     top: 62px;
     right: 5px;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     display: flex;
 
 }
 
 
 .popup a{
-    margin-left: 20px;
+    margin-left: 10px;
     text-decoration: none;
     color: white;
+    margin-top: 10px;
 }
 
 .popup a:first-child{
@@ -116,7 +138,7 @@ main{
     height: 100vh;
     display: flex;
     flex-wrap: wrap;
-    padding: 100px;
+    padding: 10% 15%;
     background-color: rgb(240, 235, 235);
     GAP: 3rem;
 
@@ -128,19 +150,28 @@ main{
     flex-direction: column;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 250px;
-    height: 180px;
+    width: 100%;
+    height: 100%;
     padding: 0 10px;
     box-shadow: 0px 0px 0px 5px #ccc;
     margin: 0 auto;
+    background-color: #1d3340;
+
 }
 
 
 
 .painelinfo:hover{
     cursor: pointer;
-    opacity: 0.6;
+    opacity: 0.9;
 
+}
+
+.painelinfo label{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 4px;
+    color: white;
+    font-size: .95rem;
 }
 
 .painelinfo label:nth-child(1){
@@ -173,8 +204,8 @@ main{
 }
 
 .win-matricular{
-    width: 70vw;
-    height: 60vh;
+    width: 600px;
+    height: 500px;
     background-color: rgb(240, 235, 235);
     position: relative;
     display: flex;
@@ -201,9 +232,7 @@ main{
     line-height: 0.7;
 }
 
-.close-button:hover{
-    box-shadow: 0 0 0 5px #1d334080;
-}
+
 
 @keyframes modalMatric{
     from{
@@ -263,8 +292,16 @@ main{
     line-height: 0.7;
 }
 
-.close-button2:hover{
-    box-shadow: 0 0 0 5px #1d334080;
+.mat a{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.cad-user a{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
 }
 
 @keyframes modalMatric{
@@ -279,4 +316,118 @@ main{
 
 .win-cadastrar{
     animation: modalMatric .8s;
+}
+
+@media (max-width: 700px){
+    .win-matricular{
+        width: 80%;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    main{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+    }
+
+    main:nth-child(1){
+        margin-top: 50px;
+
+    }
+
+
+
+    .link-card{
+        margin-top: 40px;
+        width: 80%;
+        height: 40%;
+        margin: 20px auto;
+    }
+
+    main div:first-child{
+        margin-top: 20px;
+    }
+
+    header nav a {
+        margin-right: 10px;
+    }
+
+
+    .drop{
+        display: flex;
+        margin-left: 250px;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        
+    }
+
+    .drop a{
+        text-decoration: none;
+        color: white;
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        align-content: center;
+
+    }
+
+    .line{
+        background-color: white;
+        margin: 5px auto;
+    }
+
+    header nav a label{
+        display: none;
+    }
+
+    .modalpopup{
+        width: 100vw;
+        height: 80vh;
+        position: absolute;
+        top: 0;
+        background-color: rgba(0,0,0,0.0);
+        display: flex;
+     
+    }
+    
+    @keyframes modalanim{
+        from{
+            transform: translate(100%, 0);
+        }
+        to{
+            transform: translate(0,0);
+        }
+    }
+    
+    .modalpopup{
+        animation: modalanim .8s;
+    }
+    
+    .popup{
+        width: 300px;
+        height: 600px;
+        position: absolute;
+        background-color: #1d3340;
+        top: 60px;
+        right: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        display: flex;
+    
+    }
+
+    .popup a:first-child{
+        margin-top: 20px;
+    }
+    
+
 }
