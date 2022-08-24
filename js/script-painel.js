@@ -1,7 +1,8 @@
-const popupActive = document.getElementById('popupActive')
-const popup = document.getElementById('popup')
-const modalpopup = document.getElementById("modalpopup")
-const drop = document.getElementById('drop')
+const popupActive = document.getElementById('popupActive');
+const popup = document.getElementById('popup');
+const modalpopup = document.getElementById("modalpopup");
+const drop = document.getElementById('drop');
+
 
 
 

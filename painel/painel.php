@@ -1,5 +1,14 @@
 <?php
-require_once("../mysql/conect.php")
+require_once("../mysql/conect.php");
+
+if(@$_GET["id_sala"] == ""){
+    $id_sala = "home";
+}else{
+    $id_sala = $_GET["id_sala"];
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -25,16 +34,16 @@ require_once("../mysql/conect.php")
                 <div class="line"></div>
                 </a>
             </div>
-            <a href="#" id="popupActive"><label>Nome Sobrenome</label></a>
+            <a href="#" id="popupActive"><label><?php echo $nome_usuario_adm .' '.$sobrenome_usuario_adm; ?></label></a>
         </nav>
     </header>
 
     <main>
-            <a href="#" class="link-card">
+            <a href="modal-salas.php?id_sala=1" class="link-card">
                 <div class="painelinfo">
-                    <Label>Nome da Sala</Label>
+                    <Label><?php echo $nome_sala1; ?></Label>
                     <Label>Data: 08/08/2022</Label>
-                    <Label>Alunos Matriculados: 20</Label>
+                    <Label>Alunos Matriculados: <?php echo $alunos_sala1 ?></Label>
                     <Label>Alunos Presentes: 15</Label>
                     <Label>Biblias: 15</Label>
                     <Label>Revistas: 15</Label>
@@ -42,11 +51,11 @@ require_once("../mysql/conect.php")
                 </div>
             </a>
 
-            <a href="#" class="link-card">
+            <a href="modal-salas.php?id_sala=2"  class="link-card">
                 <div class="painelinfo">
-                    <Label>Nome da Sala2</Label>
+                    <Label><?php echo $nome_sala2; ?></Label>
                     <Label>Data: 08/08/2022</Label>
-                    <Label>Alunos Matriculados: 20</Label>
+                    <Label>Alunos Matriculados: <?php echo $alunos_sala2 ?></Label>
                     <Label>Alunos Presentes: 15</Label>
                     <Label>Biblias: 15</Label>
                     <Label>Revistas: 15</Label>
@@ -54,11 +63,11 @@ require_once("../mysql/conect.php")
                 </div>
             </a>
 
-            <a href="#" class="link-card">
+            <a href="modal-salas.php?id_sala=3" class="link-card">
                 <div class="painelinfo">
-                    <Label>Nome da Sala3</Label>
+                    <Label><?php echo $nome_sala3; ?></Label>
                     <Label>Data: 08/08/2022</Label>
-                    <Label>Alunos Matriculados: 20</Label>
+                    <Label>Alunos Matriculados: <?php echo $alunos_sala3 ?></Label>
                     <Label>Alunos Presentes: 15</Label>
                     <Label>Biblias: 15</Label>
                     <Label>Revistas: 15</Label>
@@ -66,11 +75,11 @@ require_once("../mysql/conect.php")
                 </div>
             </a>
 
-            <a href="#" class="link-card">  
+            <a href="modal-salas.php?id_sala=4" class="link-card">  
                 <div class="painelinfo">
-                    <Label id="nomeSala">Nome da Sala</Label>
+                    <Label><?php echo $nome_sala4; ?></Label>
                     <Label>Data: 08/08/2022</Label>
-                    <Label>Alunos Matriculados: 20</Label>
+                    <Label>Alunos Matriculados: <?php echo $alunos_sala4 ?></Label>
                     <Label>Alunos Presentes: 15</Label>
                     <Label>Biblias: 15</Label>
                     <Label>Revistas: 15</Label>
@@ -78,11 +87,11 @@ require_once("../mysql/conect.php")
                 </div>
             </a>
 
-            <a href="#" class="link-card">
+            <a href="modal-salas.php?id_sala=5" class="link-card">
                 <div class="painelinfo">
-                    <Label>Nome da Sala</Label>
+                    <Label><?php echo $nome_sala5; ?></Label>
                     <Label>Data: 08/08/2022</Label>
-                    <Label>Alunos Matriculados: 20</Label>
+                    <Label>Alunos Matriculados: <?php echo $alunos_sala5 ?></Label>
                     <Label>Alunos Presentes: 15</Label>
                     <Label>Biblias: 15</Label>
                     <Label>Revistas: 15</Label>
@@ -109,7 +118,45 @@ require_once("../mysql/conect.php")
 
     <div class="modal-matricular" id="modal-matricular">
         <div class="win-matricular" id="win-matricular">
-            <?php require_once("matricular.php") ?>
+        
+        <div class="form-container">
+
+            <form action="matricular.php" method="POST">
+
+                <div class="container1">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome">
+
+                    <label for="sobrenome">Sobrenome</label>
+                    <input type="text" name="sobrenome" id="sobrenome">
+
+                </div>
+       
+                <div class="container2">
+        
+                    <label for="sala">Sala</label>
+                        <select name="sala" id="sala">
+                        <option value="1"><?php echo $nome_sala1 ?></option>
+                        <option value="2"><?php echo $nome_sala2 ?></option>
+                        <option value="3"><?php echo $nome_sala3 ?></option>
+                        <option value="4"><?php echo $nome_sala4 ?></option>
+                        <option value="5"><?php echo $nome_sala5 ?></option>
+                    </select>
+
+                    <label for="data_nascimento">Data de Nascimento</label>
+                    <input type="date" name="data_nascimento" id="data_nascimento">
+
+                </div>
+        
+
+
+                <input type="submit" id="btn-matricular" value="Matricular">
+
+
+            </form>
+
+        </div>
+
             <a href="#" onclick="closeModalMatricular()" class="close-button">X</a>
         </div>
     </div>
@@ -125,4 +172,5 @@ require_once("../mysql/conect.php")
 
 </body>
 <script type="text/javascript" src="../js/script-painel.js"></script>
+
 </html>

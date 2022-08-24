@@ -1,54 +1,25 @@
 <?php
 require_once("../mysql/conect.php");
+require_once("painel.php");
+
+$nome = $_POST['nome'];
+$sobrenome = $_POST['sobrenome'];
+$sala = $_POST['sala'];
+$data_nascimento = $_POST['data_nascimento'];
+
+
+try{
+
+    $query = $con->prepare("INSERT INTO tb_alunos SET nome = :nome, sobrenome = :sobrenome, id_sala = '$sala', data_nascimento = '$data_nascimento'");
+    $query->bindValue(":nome", "$nome");
+    $query->bindValue(":sobrenome", "$sobrenome");
+    $query->execute();
+
+    echo"<script>window.location.href='painel.php'</script>";
+
+
+}catch(exception $e){
+    die("Não foi possivel fazer a gravação no banco de dados." .$e);
+}
+
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style-matricular.css">
-</head>
-<body>
-
-    <div class="form-container">
-
-        <form action="" method="">
-
-            <div class="container1">
-                <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome">
-
-                <label for="sobrenome">Sobrenome</label>
-                <input type="text" name="sobrenome" id="sobrenome">
-
-            </div>
-               
-            <div class="container2">
-                
-                 <label for="sala">Sala</label>
-                    <select name="sala" id="sala">
-                    <option value="1">Sala 1</option>
-                    <option value="1">Sala 2</option>
-                    <option value="1">Sala 3</option>
-                    <option value="1">Sala 4</option>
-                    <option value="1">Sala 5</option>
-                </select>
-
-                <label for="data_nascimento">Data de Nascimento</label>
-                <input type="date" name="data_nascimento" id="data_nascimento">
-
-            </div>
-                
-
-
-            <input type="submit" id="btn-matricular" value="Matricular">
-
-
-        </form>
-
-    </div>
-
-</body>
-</html>
