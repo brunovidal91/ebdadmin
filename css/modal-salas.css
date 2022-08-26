@@ -11,6 +11,7 @@ body{
     width: 100vw;
     height: 100vh;
     background-color: rgb(240, 235, 235);
+    overflow-x: hidden;
 }
 
 /*###################################################### NAV ######################################################*/
@@ -25,26 +26,9 @@ body{
     
 }
 
-.drop{
-    
-    width: 40px;
-    height:40px;
-    border: 1px solid white;
-    border-radius: 50%;
-    display: none;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
 
-}
 
-.line{
-    width: 50%;
-    height: 2px;
-    background-color: white;
-    margin-bottom: 5px;
 
-}
 
 header nav a label{
     color: white;
@@ -78,44 +62,96 @@ nav{
 }
 
 main{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
 
-main{
+/*##################################  TABELA DE INFORMAÇÕES DE ALUNOS - ABASTECE A TABELA GERAL  ###########################*/
+
+.info-container{
+    margin-top: 10%;
+    background-color: #069;
+    min-width: 50%;
+    max-width: 90%;
+
     display: flex;
     align-items: center;
-    justify-content: center;
+    flex-direction: column ;
 }
 
-main table{
-    width: 60vw;
-    height: 50vh;
-    border: 1px solid #ccc;
-    text-align: center;
-    margin-top: 20px;
-
+.info-form{
+    display: flex;
+    flex-direction: column;
+    max-height: 400px;
+    width: 80%;
+    align-items: center;
+    overflow-y: scroll;
+    background-color: #1d3340;
+    margin-top: 30px;
 }
 
-main table th{
-    border-bottom: 1px solid #ccc;
-    
+
+.info-list{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
 }
 
-main table{
-    overflow-y:visible;
+
+
+
+.info-list input{
+    padding: 8px;
 }
 
-main table thead tr{
-    max-height: 20px;
+.info-list input[type="checkbox"]{
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
 }
 
-main table tbody tr td{
-    height: 40px;
-    border: 1px solid #ccc;
+
+.info-list input:first-child{
+    width: 50%;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 700px){
+    main{
+        padding-top: 60px;
+    }
+
+    .info-list input[type="checkbox"]{
+        width: 30px;
+        height: 30px;
+        margin-left: 20px
+    }
+
+    .info-form{
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .info-container{
+
+        width: 100%;
+    }
+
+    .info-list{
+        margin-top: 10px;
+    }
+
+
+
 
 }

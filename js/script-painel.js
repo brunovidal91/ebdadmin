@@ -6,6 +6,7 @@ const drop = document.getElementById('drop');
 
 
 
+
 drop.addEventListener('click', ()=>{
     modalpopup.style.display = "flex";
   
@@ -27,6 +28,7 @@ modalpopup.addEventListener('click', function(e){
 
     }
 })
+
 
 
 

@@ -30,58 +30,57 @@ if($res > 0){
         <nav>
         <a href="painel.php"><div class="logo">LOGO</div></a>
             <div class="drop">
-                <a href="" id="drop">
+                <a href="" id="drop_salas">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
                 </a>
             </div>
-            <a href="/" id="popupActive"><label><?php echo $nome_usuario_adm .' '.$sobrenome_usuario_adm ?></label></a>
+            <a href="#" id="popupActive_salas"><label><?php echo $nome_usuario_adm .' '.$sobrenome_usuario_adm ?></label></a>
         </nav>
     </header>
 
     <main>
 
-       
-                <table>
+        <div class="info-container">
 
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Data de Matrícula</th>
-                            <th>Data de Aniversário</th>
-                        </tr>
+                    <form class="info-form">
 
-                    </thead>
-                
-                   
-                    <tbody>
-
-                    <?php
-                        $query_alunos = $con->query("SELECT * FROM tb_alunos WHERE id_sala = '$id_sala'");
+                        <?php
+                        $query_alunos = $con->query("SELECT *, DATE_FORMAT(data_matricula, '%d/%m/%Y') AS data_matricula_formatada, DATE_FORMAT(data_nascimento, '%d/%m/%Y') AS data_nascimento_formatada FROM tb_alunos WHERE id_sala = '$id_sala'");
                         $lista_alunos = $query_alunos->fetchAll(PDO::FETCH_ASSOC);
                         foreach($lista_alunos as $aluno){?>
+
+                        
+                        <div class="info-list">
+
+                            <input type="text" value="<?php echo $aluno['nome'].' '.$aluno['sobrenome'] ?>" disabled/>
+                            <input type="checkbox" class="presenca" name="presenca" onclick="presente()">
+                            <input type="checkbox" class="biblia" name="biblia">
+                            <input type="checkbox" class="revista" name="revista">
+
+
+                        </div>
                     
+                        <?php     
+                            }
+                         ?>
+                
 
-                            <tr>
-                                <td><?php echo $aluno['nome'].' '.$aluno['sobrenome'] ?></td>
-                                <td><?php echo $aluno['data_matricula'] ?></td>
-                                <td><?php echo $aluno['data_nascimento'] ?></td>
-                            </tr>
-                            
-                            <?php     
-                        }
-                    ?>
-                        </tbody>
+                    </form>
 
-                    </table>
+
+        </div>
+
+       
+
 
 
 
 
     </main>
 
-  
+    <script type="text/javascript" src="../js/script-modal-salas.js"></script>  
 </body>
 
 </html>
