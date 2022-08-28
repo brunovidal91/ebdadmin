@@ -19,6 +19,7 @@ if(@$_GET["id_sala"] == ""){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EBD-Admin - Painel Administrativo</title>
     <link rel="stylesheet" href="style-painel.css">
+    <link rel="stylesheet" href="style-cad-prof.css">
     
 
 </head>
@@ -108,6 +109,10 @@ if(@$_GET["id_sala"] == ""){
                 <a href="#" onclick="openModalMatricular()"><img src="../img/graduated.png" width="25px"><span>Matricular</span></a>
             </div>
 
+            <div class="cad-prof">
+                <a href="#" onclick="openModalCadProf()"><img src="../img/add-user.png" width="25px"><span>Professores</span></a>
+            </div>
+
             <div class="cad-user">
                 <a href="#" onclick="openModalCadastrar()"><img src="../img/add-contact.png" width="25px"><span>Cadastrar Usuário</span></a>
             </div>
@@ -160,6 +165,51 @@ if(@$_GET["id_sala"] == ""){
             <a href="#" onclick="closeModalMatricular()" class="close-button">X</a>
         </div>
     </div>
+
+    <!-- ***************************************************************************************** -->
+
+    <div class="modal-cad-prof" id="modal-cad-prof">
+        <div class="win-cad-prof" id="win-cad-prof">
+        
+        <div class="form-container-cad-prof">
+
+            <form action="cad-prof.php" method="POST">
+
+                <div class="container1-cad-prof">
+                    <label for="nome_prof">Nome</label>
+                    <input type="text" name="nome_prof" id="nome_prof">
+
+                    <label for="sobrenome_prof">Sobrenome</label>
+                    <input type="text" name="sobrenome_prof" id="sobrenome_prof">
+
+                </div>
+       
+                <div class="container2-cad-prof">
+        
+                    <label for="sala_prof">Sala</label>
+                        <select name="sala_prof" id="sala_prof">
+                        <option value="1"><?php echo $nome_sala1 ?></option>
+                        <option value="2"><?php echo $nome_sala2 ?></option>
+                        <option value="3"><?php echo $nome_sala3 ?></option>
+                        <option value="4"><?php echo $nome_sala4 ?></option>
+                        <option value="5"><?php echo $nome_sala5 ?></option>
+                    </select>
+
+                </div>
+        
+
+
+                <input type="submit" id="btn-cad-prof" value="Cadastrar">
+
+
+            </form>
+
+        </div>
+
+            <a href="#" onclick="closeModalCadProf()" class="close-button">X</a>
+        </div>
+    </div>
+
 
     <div class="modal-cadastrar" id="modal-cadastrar">
         <div class="win-cadastrar" id="win-cadastrar">

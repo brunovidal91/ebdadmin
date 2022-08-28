@@ -248,6 +248,70 @@ main{
     animation: modalMatric .5s;
 }
 
+
+/*###################################################### MODAL CAD PROF ######################################################*/
+
+.modal-cad-prof{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: .5s;
+}
+
+.win-cad-prof{
+    width: 600px;
+    height: 500px;
+    background-color: rgb(240, 235, 235);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.close-button{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #1d3340;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: 0 0 0 5px #1d3340;
+    text-align: center;
+    text-decoration: none;
+    color: #e9d636;
+    font: bolder;
+    background-color: #1d3340;
+    font-size: 20px;
+    line-height: 0.7;
+}
+
+
+
+@keyframes modalCadProf{
+    from{
+
+        transform: translate(100%, 0);
+    }
+    to{
+        transform: translate(0, 0);
+    }
+}
+
+.win-cad-prof{
+    animation: modalCadProf .5s;
+}
+
+
+
+
+
 /*###################################################### MODAL CADASTRAR ######################################################*/
 
 
@@ -299,6 +363,12 @@ main{
 }
 
 .cad-user a{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.cad-prof a{
     display: flex;
     align-items: center;
     gap: .5rem;
@@ -471,6 +541,15 @@ form input[type="submit"]:hover{
 
 @media (max-width: 700px){
     .win-matricular{
+        width: 80%;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    .win-cad-prof{
         width: 80%;
         height: 80vh;
         display: flex;

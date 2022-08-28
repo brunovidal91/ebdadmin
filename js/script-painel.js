@@ -49,6 +49,25 @@ function closeModalMatricular(){
 
 }
 
+
+function openModalCadProf(){
+    const modalCadProf = document.getElementById('modal-cad-prof')
+    modalCadProf.style.display = "flex"
+    modalCadProf.style.position= "fixed"
+    modalpopup.style.display="none"
+    document.querySelector('body').style.overflowX = "hidden"
+
+
+}
+
+function closeModalCadProf(){
+    const modalCadProf = document.getElementById('modal-cad-prof')
+    modalCadProf.style.display = "none"
+
+
+}
+
+
 function openModalCadastrar(){
     const modalCadastrar = document.getElementById('modal-cadastrar')
     modalCadastrar.style.display = "flex"

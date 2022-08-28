@@ -67,15 +67,42 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding-top: 10%;
 
 }
+
+.professor{
+    background-color: rgba(0,60,90,0.2);
+    color: #1d3340;
+    width: 60%;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+
+
+.professor label span{
+    margin-left: 20px;
+}
+
+.professor a{
+    margin-left: 30px;
+    margin-right: 10px;
+    float: right;
+}
+
+.professor a:first-child(){
+    margin-left: 50px;
+}
+
 
 /*##################################  TABELA DE INFORMAÇÕES DE ALUNOS - ABASTECE A TABELA GERAL  ###########################*/
 
 .info-container{
-    margin-top: 10%;
-    background-color: #069;
-    min-width: 50%;
+    margin-top: 0;
+
+    min-width: 60%;
     max-width: 90%;
 
     display: flex;
@@ -86,12 +113,13 @@ main{
 .info-form{
     display: flex;
     flex-direction: column;
-    max-height: 400px;
-    width: 80%;
+    max-height: 500px;
+    width: 60%;
     align-items: center;
     overflow-y: scroll;
-    background-color: #1d3340;
     margin-top: 30px;
+    margin-bottom: 20px;
+    background-color: rgba(0,60,90,0.2);
 }
 
 
@@ -99,6 +127,7 @@ main{
     margin-top: 10px;
     display: flex;
     align-items: center;
+    gap: 1.8rem;
 }
 
 
@@ -122,10 +151,6 @@ main{
 
 
 
-
-
-
-
 @media (max-width: 700px){
     main{
         padding-top: 60px;
@@ -139,16 +164,34 @@ main{
 
     .info-form{
         align-items: center;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
+        background-color: #1d3340;
+        width: 100%;
+        padding: 0 10px;
     }
 
     .info-container{
-
         width: 100%;
     }
 
     .info-list{
         margin-top: 10px;
+        gap: 0rem;
+    }
+
+    .info-list a{
+        margin-left: 20px;
+    }
+
+    .professor{
+        width: 100%;
+        background-color: #1d3340;
+        color: #fff;
+    }
+
+    .professor a{
+        margin-left: 20px;
+        margin-right: 0;
     }
 
 

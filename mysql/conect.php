@@ -64,5 +64,4 @@ $alunos_sala3 = alunos(3);
 $alunos_sala4 = alunos(4);
 $alunos_sala5 = alunos(5);
 
-
 ?>
