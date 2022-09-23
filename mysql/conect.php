@@ -28,11 +28,7 @@ $nome_sala4 = $res[3]['nome'];
 $nome_sala5 = $res[4]['nome'];
 
 
-$query_user = $con->query("SELECT * FROM tb_usuarios WHERE cargo = 'Administrador'");
-$usr = $query_user->fetchAll(PDO::FETCH_ASSOC);
 
-$nome_usuario_adm = $usr[0]['nome'];
-$sobrenome_usuario_adm = $usr[0]['sobrenome'];
 
 $query_qtd_alunos = $con->query("SELECT * FROM tb_alunos");
 $qtd = $query_qtd_alunos->fetchAll(PDO::FETCH_ASSOC);
