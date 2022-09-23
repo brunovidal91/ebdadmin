@@ -17,12 +17,22 @@ body{
 /*###################################################### NAV ######################################################*/
 
 .logo{
+    width: 33%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.logo a{
     width: 113px;
     height: 50px;
     border: 1px solid #e9d636;
     text-align: center;
     color: #e9d636;
     padding: 10px;
+
     
 }
 
@@ -52,6 +62,7 @@ header, nav{
     height: 60px;
     background-color: #1d3340;
     position: fixed;
+    z-index: 10;
 }
 
 nav{
@@ -59,8 +70,278 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
+
 }
 
+.name-sala{
+    width: 33%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.name-sala label{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+
+.popupActive_salas{
+    width: calc(100% - 66%);
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.popup-salas{
+    width: 200px;
+    height: 150px;
+    background-color: #1d3340;
+    position: fixed;
+    top: 62px;
+    right: -200px;
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: .7rem;
+
+}
+
+
+
+.popup-salas.active{
+    right: 2px;
+    transition: .5s;
+
+}
+
+.popup-salas p{
+    width: 100%;
+    text-align: left;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.popup-salas p:last-child{
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    background-color: #122029;
+}
+
+.popup-salas p:last-child:hover{
+    background-color: #0e1920;
+    transition: .2s;
+}
+
+.popup-salas p a{
+    text-decoration: none;
+    color: #fff;
+}
+
+/*######################## MODAL MATRICULAR ######################################################*/
+
+.modalMatricular{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    display: none;
+    transition: .5s;
+    z-index: 20;
+}
+
+.modalMatricular.active{
+    display: flex;
+}
+
+
+.win-matricular-sala{
+    width: 400px;
+    height: 400px;
+    background-color: #1d3340;
+    position: absolute;
+    top: 42%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+}
+
+
+.form-container-sala{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.form-container-sala form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.container1-sala, .container2-sala{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container1-sala input, .container2-sala input{
+    width: 60%;
+    padding: 5px;
+    margin-bottom: 20px;
+    font-size: .9em;
+    text-align: center;
+    outline: none;
+}
+
+.container1-sala label, .container2-sala label{
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: white;
+}
+
+.form-container-sala form input[type="submit"]{
+    width: 40%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-button-matricular{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #1d3340;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: 0 0 0 5px #1d3340;
+    text-align: center;
+    text-decoration: none;
+    color: #e9d636;
+    font: bolder;
+    background-color: #1d3340;
+    font-size: 20px;
+    line-height: 0.7;
+}
+
+
+.modalEditProf{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    top: 0;
+    display: none;
+    transition: .5s;
+    z-index: 20;
+}
+
+.modalEditProf.active{
+    display: flex;
+    transition: .5s;
+}
+
+.win-edit-prof{
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1d3340;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.win-edit-prof form{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+.prof-list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.win-edit-prof form input{
+    text-align: center;
+    padding: 5px;
+    font-size: .9em;
+    width: 45%;
+    outline: none;
+}
+
+.win-edit-prof form input[type="submit"]{
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+.lbl-prof-list{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    font-weight: bold;
+
+}
+
+
+.close-button-edit-prof{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #1d3340;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: 0 0 0 5px #1d3340;
+    text-align: center;
+    text-decoration: none;
+    color: #e9d636;
+    font: bolder;
+    background-color: #1d3340;
+    font-size: 20px;
+    line-height: 0.7;
+}
+
+/*######################## MAIN ######################################################*/
 main{
     width: 100%;
     min-height: 10%;
@@ -68,133 +349,182 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding-top: 10%;
-
 }
 
-.professor{
-    background-color: rgba(0,60,90,0.2);
-    color: #1d3340;
-    width: 60%;
-    margin-top: 5px;
-    padding: 5px;
-}
-
-
-
-.professor label span{
-    margin-left: 20px;
-}
-
-.professor a{
-    margin-left: 30px;
-    margin-right: 10px;
-    float: right;
-}
-
-.professor a:first-child(){
-    margin-left: 50px;
-}
-
-
-/*##################################  TABELA DE INFORMAÇÕES DE ALUNOS - ABASTECE A TABELA GERAL  ###########################*/
-
-.info-container{
-    margin-top: 0;
-
-    min-width: 60%;
-    max-width: 90%;
-
-    display: flex;
-    align-items: center;
-    flex-direction: column ;
-}
-
-.info-form{
+.content-lista-alunos{
     display: flex;
     flex-direction: column;
-    max-height: 500px;
-    width: 60%;
+    width: 90%;
     align-items: center;
-    overflow-y: scroll;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    background-color: rgba(0,60,90,0.2);
+    margin-top: 50px;
+    padding-bottom: 20px;
+    justify-content: center;
+    overflow-x: hidden;
+
 }
 
-
-.info-list{
-    margin-top: 10px;
+.content-lista-alunos form{
     display: flex;
     align-items: center;
-    gap: 1.8rem;
+    justify-content: center;
+    flex-direction: column;
 }
 
+.item-list{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+    gap: 1rem;
+    border-bottom: 1px solid #ccc; 
+}
 
-
-
-.info-list input{
+.item-list input[type="text"]{
     padding: 8px;
+    width: 200px;
+    margin-left: 10px;
+    border: none;
+    color: #000;
+
 }
 
-.info-list input[type="checkbox"]{
-    width: 30px;
-    height: 30px;
-    margin-left: 20px;
+.item-list .alt{
+    text-align: center;
 }
 
 
-.info-list input:first-child{
-    width: 50%;
+.cb{
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-left: 5px;
+    border-radius: 50%;
 }
 
 
 
+.item-list ul{
+    list-style: none;
+    display: flex;
 
-@media (max-width: 700px){
-    main{
-        padding-top: 60px;
+}
+
+.item-list ul li{
+    position: relative;
+}
+
+
+.space{
+    margin-right: 10px;
+}
+
+
+.container-prof{
+    width: 200px;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-prof label{
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.info-prof{
+    width: 200px;
+    margin-top: 5px;
+    background-color: #1d3340;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.info-prof label{
+    margin-top: 3px;
+}
+
+.legenda{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.legenda label{
+    width: 150px;
+    margin-left: 10px;
+    padding: 8px;
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 850px){
+
+
+    .legenda{
+        display: none;
     }
 
-    .info-list input[type="checkbox"]{
+    .content-lista-alunos{
+        justify-content: flex-start;
+        width: 100%;
+        padding: 0;
+
+    }
+    .alt{
+        display: none;
+    }
+
+    .item-list{
+        gap: .5rem;
+    }
+
+    .item-list a{
+         margin-left: 5px;
+    }
+
+    .item-list .link-edit{
+        margin-left: 10px;
+   }
+
+    .cb{
         width: 30px;
         height: 30px;
-        margin-left: 20px
     }
 
-    .info-form{
+    .item-list input[type="text"]{
+        width: 180px;
+        margin-left: 2px;
+    
+    }
+
+    .item-list ul{
+        width: 100px;
+    }
+
+    .item-list a img{
+        width: 25px;
+    }
+
+    .win-matricular-sala{
+        width: 350px;
+        height: 400px;
+        background-color: #1d3340;
+        position: absolute;
+        top: 42%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
         align-items: center;
-        margin-bottom: 20px;
-        background-color: #1d3340;
-        width: 100%;
-        padding: 0 10px;
+        padding: 10px;
+    
     }
-
-    .info-container{
-        width: 100%;
-    }
-
-    .info-list{
-        margin-top: 10px;
-        gap: 0rem;
-    }
-
-    .info-list a{
-        margin-left: 20px;
-    }
-
-    .professor{
-        width: 100%;
-        background-color: #1d3340;
-        color: #fff;
-    }
-
-    .professor a{
-        margin-left: 20px;
-        margin-right: 0;
-    }
-
-
-
-
+    
 }

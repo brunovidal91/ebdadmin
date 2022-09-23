@@ -35,6 +35,7 @@ form input, select{
     padding: 8px;
     text-align: center;
     display: block;
+    outline: none;
 
 }
 
@@ -84,6 +85,10 @@ form input[type="submit"]:hover{
         border: none;
     }
 
+    .container1-cad-prof, .container2-cad-prof{
+        width: 100%;
+    }
+
     form{
 
         justify-content: center;
@@ -95,9 +100,11 @@ form input[type="submit"]:hover{
     }
 
     form input, select{
-        margin: 10px auto;
-        width: 100%;
+        margin: 12px auto;
+        width: 90%;
         padding: 8px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1em;
 
     }
 
@@ -117,10 +124,10 @@ form input[type="submit"]:hover{
         background-color:  #1d3340;
         color: #e9d636;
         border-radius: 10px;
-        font-weight: bold;
-        width: 25%;
-        height: 15%;
-        padding: 5px;
+        width: 60%;
+        height: 50px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: .9em;
     }
 
     .container1-cad-prof{

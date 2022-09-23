@@ -26,25 +26,47 @@ body{
 }
 
 .drop{
-    
     width: 40px;
-    height:40px;
-    border: 1px solid white;
-    border-radius: 50%;
+    height: 40px;
     display: none;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
-
+    flex-direction: column;
 }
 
-.line{
-    width: 50%;
-    height: 2px;
-    background-color: white;
-    margin-bottom: 5px;
-
+.drop::after{
+    content: "";
+    background-color: #fff;
+    width: 40px;
+    height: 3px;
+    position: absolute;
+    transform: translateY(10px);
+    transition: .3s;
 }
+
+
+.drop::before{
+    content: "";
+    background-color: #fff;
+    width: 40px;
+    height: 3px;
+    position: absolute;
+    transform: translateY(0px);
+    transition: .3s;
+}
+
+
+
+.drop.active::after{
+    transform: translateY(5px) rotate(30deg);
+    transition: .3s;
+}
+
+.drop.active::before{
+    transform: translateY(5px) rotate(-30deg);
+    transition: .3s;
+}
+
 
 header nav a label{
     color: white;
@@ -83,7 +105,7 @@ nav{
     width: 100vw;
     height: 100vh;
     position: absolute;
-    top: 0;
+    top: 0px;
     background-color: rgba(0,0,0,0.0);
     display: none;
  
@@ -104,7 +126,7 @@ nav{
 
 .popup{
     width: 250px;
-    height: 150px;
+    height: 400px;
     position: absolute;
     background-color: #1d3340;
     top: 62px;
@@ -112,7 +134,7 @@ nav{
     flex-direction: column;
     gap: 1rem;
     display: flex;
-
+    padding: 10px;
 }
 
 
@@ -130,6 +152,25 @@ nav{
 .popup a:hover{
     opacity: 0.5;
 }
+
+.popup .leave{
+    background-color: #122029;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.edit-aluno a, .edit-prof a{
+    width: 100%;
+
+}
+
+.edit-aluno span, .edit-prof span{
+    margin-left: 10px;
+    
+}
+
+
+
 
 /*###################################################### MAIN ######################################################*/
 
@@ -445,6 +486,7 @@ form input, select{
     padding: 8px;
     text-align: center;
     display: block;
+    outline: none;
 
 }
 
@@ -483,10 +525,109 @@ form input[type="submit"]:hover{
     border-right: 1px solid #ccc;
 }
 
+/* ###########  MOLDAIS EDIT  ############*/
+
+/* EDIT ALUNOS */
+
+
+
+
+/* EDIT PROFESSOR */
+
+.modal-edit-prof{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: none;
+
+}
+
+.modal-edit-prof.active{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.win-edit-prof{
+    width: 600px;
+    height: 500px;
+    background-color: rgb(240, 235, 235);
+    position: relative;
+}
+
+.win-edit-prof form{
+    width: 100%;
+    height: 100%;
+}
+
+.container-prof{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 75%;
+    margin-top: -20px;
+    overflow-y: scroll;
+
+}
+
+.win-edit-prof > p{
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.item-prof, .item-sala{
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.item-prof input, select, .item-sala input{
+    flex-basis: 30%;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+
+
+.item-sala{
+    background-color: #1d3340;
+    height: 40px;
+    padding: 10px 0;
+}
+
+.item-sala input{
+    text-align: center;
+    font-weight: bold;
+    color:#e9d636;
+    background-color: #1d3340;
+}
+
+
+
+
+/* ###########  *MOLDAIS EDIT*  ############*/
+
+
 @media (max-width: 700px){
 
     .form-container{
         border: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container1, .container2{
+        width: 100%;
     }
 
     form{
@@ -503,32 +644,28 @@ form input[type="submit"]:hover{
         margin: 10px auto;
         width: 100%;
         padding: 8px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1em;
 
     }
 
-    form input[type="text"]{
-
-        width: 85%;
-
-    }
 
     form label{
         margin: 3px auto;
     }
 
     .container2 input[type="date"]{
-        width: 50%;
+        width: 70%;
     }
 
-    form input[type="submit"]{
+   .form-container form input[type="submit"]{
         margin: 20px auto;
         background-color:  #1d3340;
         color: #e9d636;
         border-radius: 10px;
-        font-weight: bold;
-        width: 25%;
-        height: 15%;
-        padding: 5px;
+        width: 60%;
+        height: 50px;
+        font-size: .8em;
     }
 
     .container1{
@@ -550,13 +687,29 @@ form input[type="submit"]:hover{
     }
 
     .win-cad-prof{
-        width: 80%;
+        width: 80vw;
         height: 80vh;
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 0;
     }
+
+
+    .win-cad-prof form{
+        width: 100%;
+        height: 100%;
+    }
+
+    .container1-cad-prof, .container2-cad-prof{
+        width: 100%;
+        height: 100%;
+    }
+
+    .win-cad-prof form input, select{
+        width: 80%;
+    }
+
 
     main{
         width: 100%;
@@ -568,7 +721,7 @@ form input[type="submit"]:hover{
     }
 
     main:nth-child(1){
-        margin-top: 50px;
+        margin-top: 51px;
 
     }
 
@@ -576,14 +729,16 @@ form input[type="submit"]:hover{
 
     .link-card{
         margin-top: 40px;
-        width: 80%;
-        height: 40%;
+        width: 400px;
+        height: 200px;
         margin: 20px auto;
     }
 
     main div:first-child{
         margin-top: 20px;
     }
+
+
 
     header nav a {
         margin-right: 10px;
@@ -619,44 +774,47 @@ form input[type="submit"]:hover{
     }
 
     .modalpopup{
-        width: 100vw;
-        height: 80vh;
-        position: absolute;
-        top: 0;
+        width: 200px;
+        height: 400px;
+        position: fixed;
+        top: 60px;
+        right: -200px;
         background-color: rgba(0,0,0,0.0);
         display: flex;
-     
+        align-items: center;
+        justify-content: center;
+        transition: .5s;
+   
+    }
+
+    .modalpopup.active{
+        right: 0px;
+        transition: .5s;
     }
     
-    @keyframes modalanim{
-        from{
-            transform: translate(100%, 0);
-        }
-        to{
-            transform: translate(0,0);
-        }
-    }
-    
-    .modalpopup{
-        animation: modalanim .8s;
-    }
-    
+
     .popup{
-        width: 300px;
-        height: 600px;
+        width: 100%;
+        height: 100%;
         position: absolute;
-        background-color: #1d3340;
-        top: 60px;
+        top: 0;
         right: 0;
+        background-color: #1d3340;
         flex-direction: column;
         align-items: center;
-        gap: 4rem;
+        gap: 1rem;
         display: flex;
     
     }
 
     .popup a:first-child{
         margin-top: 20px;
+
+    }
+
+    .popup a:last-child{
+        margin-top: 30px;
+        width: 100%;
     }
     
 

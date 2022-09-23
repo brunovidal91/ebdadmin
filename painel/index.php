@@ -1,5 +1,6 @@
 <?php
 require_once("../mysql/conect.php");
+require_once("protect.php");
 
 if(@$_GET["id_sala"] == ""){
     $id_sala = "home";
@@ -18,8 +19,8 @@ if(@$_GET["id_sala"] == ""){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EBD-Admin - Painel Administrativo</title>
-    <link rel="stylesheet" href="style-painel.css">
-    <link rel="stylesheet" href="style-cad-prof.css">
+    <link rel="stylesheet" href="../css/style-painel.css">
+    <link rel="stylesheet" href="../css/style-cad-prof.css">
     
 
 </head>
@@ -28,14 +29,8 @@ if(@$_GET["id_sala"] == ""){
     <header>
         <nav>
             <div class="logo">LOGO</div>
-            <div class="drop">
-                <a href="" id="drop">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-                </a>
-            </div>
-            <a href="#" id="popupActive"><label><?php echo $nome_usuario_adm .' '.$sobrenome_usuario_adm; ?></label></a>
+            <div class="drop"></div>
+            <a href="#" id="popupActive"><label><?php echo $_SESSION['nome'] .' '.$_SESSION['sobrenome']; ?></label></a>
         </nav>
     </header>
 
@@ -106,18 +101,29 @@ if(@$_GET["id_sala"] == ""){
         <div class="popup" id="popup">
             
             <div class="mat">
-                <a href="#" onclick="openModalMatricular()"><img src="../img/graduated.png" width="25px"><span>Matricular</span></a>
+                <a href="#" onclick="openModalMatricular()"><img src="../img/graduated.png" width="25"><span>Matricular</span></a>
             </div>
 
             <div class="cad-prof">
-                <a href="#" onclick="openModalCadProf()"><img src="../img/add-user.png" width="25px"><span>Professores</span></a>
+                <a href="#" onclick="openModalCadProf()"><img src="../img/teacher.png" width="25"><span> +Professor</span></a>
             </div>
 
             <div class="cad-user">
-                <a href="#" onclick="openModalCadastrar()"><img src="../img/add-contact.png" width="25px"><span>Cadastrar Usuário</span></a>
+                <a href="#" onclick="openModalCadastrar()"><img src="../img/add-contact.png" width="25"><span>Cadastrar Usuário</span></a>
             </div>
 
-                <a href="#">Sair</a>
+            <div class="edit-aluno">
+                <a href="#"><img src="../img/edit.png" width="25"><span>Editar Alunos</span></a>
+            </div>
+
+            <div class="edit-prof">
+                <a href="#"><img src="../img/edit.png" width="25"><span>Editar Professor</span></a>
+            </div>
+
+
+
+
+                <a href="logout.php" class="leave">Sair</a>
         </div>
     </div>
 
@@ -205,8 +211,8 @@ if(@$_GET["id_sala"] == ""){
             </form>
 
         </div>
-
-            <a href="#" onclick="closeModalCadProf()" class="close-button">X</a>
+        <a href="#" onclick="closeModalCadProf()" class="close-button">X</a>
+            
         </div>
     </div>
 
@@ -218,9 +224,14 @@ if(@$_GET["id_sala"] == ""){
         </div>
     </div>
 
-
+    <div class="modal-edit-prof">
+        <div class="win-edit-prof"></div>
+    </div>
 
 </body>
+
 <script type="text/javascript" src="../js/script-painel.js"></script>
+<script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="../js/ajax-listar.js"></script>
 
 </html>
