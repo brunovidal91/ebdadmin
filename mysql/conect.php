@@ -5,6 +5,8 @@ $user = 'b85b23befdfd70';
 $pass = 'c848e266';
 $db = 'heroku_13b189c7583d61f';
 
+date_default_timezone_set('America/Sao_Paulo');
+
 try {
     
     $con = new PDO("mysql:dbname=$db; host=$host", "$user", "$pass");
