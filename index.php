@@ -16,7 +16,7 @@ require_once("mysql/conect.php");
     <div class="container-login">
         <div class="img">LOGO</div>
         <div class="form-login">
-            <form id="form-l" method="POST">
+            <form id="form-l" method="POST" action="painel">
                 <input type="email" name="email" id="email">
                 <input type="password" name="pass" id="pass">
                 <input type="submit" value="Entrar">
