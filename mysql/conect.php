@@ -1,10 +1,10 @@
 <?php
 
 
-$db = 'heroku_c8973cc157e9696';
+$db = 'heroku_bbda86d3d577513';
 $host = 'us-cdbr-east-06.cleardb.net';
-$user = 'b59db78c6b7e76';
-$pass = 'bc754506';
+$user = 'bee1e56bafcc7e';
+$pass = 'b7768602';
 
 
 
