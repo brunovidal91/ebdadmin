@@ -33,7 +33,7 @@ if($res > 0){
         <nav>
         <div class="logo"><a href="index.php">LOGO</a></div>
             <div class="name-sala"><Label><?php echo $nome_sala ?></Label></div>
-            <a href="#" id="popupActive_salas" class="popupActive_salas"><label><?php echo $nome_usuario_adm .' '.$sobrenome_usuario_adm ?></label></a>
+            <a href="#" id="popupActive_salas" class="popupActive_salas"><label><?php echo $_SESSION['nome'] .' '.$_SESSION['sobrenome'] ?></label></a>
         
             <div class="popup-salas">
                 <p id="matricular"><img src="../img/graduated.png" width="25"> Matricular</p>
