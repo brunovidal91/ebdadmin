@@ -30,7 +30,7 @@ echo <<<HTML
     <option value="4">{$nome_sala4}</option>
     <option value="5">{$nome_sala5}</option>
 </select>
-<a href="edit-prof.php?id={$professor['idprof']}"><img src="../img/edit.png" width="25"></a>
+<a href="#"><img src="../img/edit.png" width="25"></a>
 <a href="#"><img src="../img/delete.png" width="25"></a>
 
 </div>
