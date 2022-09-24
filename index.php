@@ -3,7 +3,7 @@ require_once("mysql/conect.php")
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@ require_once("mysql/conect.php")
     <div class="container-login">
         <div class="img">LOGO</div>
         <div class="form-login">
-            <form id="form-l" method="POST" action="autenticar.php">
+            <form id="form-l" method="POST">
                 <input type="email" name="email" id="email">
                 <input type="password" name="pass" id="pass">
                 <input type="submit" value="Entrar">
@@ -24,6 +24,6 @@ require_once("mysql/conect.php")
     </div>
     <div class="result">Teste</div>
     <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script type="text/javascript" src="js/ajax-login.js"></script>
+    <script src="js/ajax.js"></script>
 </body>
 </html>
