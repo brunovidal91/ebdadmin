@@ -14,8 +14,8 @@ try {
     
     $con = new PDO("mysql:dbname=$db; host=$host", "$user", "$pass");
 
-} catch (Exception $erro) {
-    die("Erro de conexão com o bando de dados") .$erro;
+} catch (exception $erro) {
+    die("Erro de conexão com o banco de dados") .$erro;
 }
 
 
@@ -49,7 +49,7 @@ function alunos($sala){
         $con = new PDO("mysql:dbname=$db; host=$host", "$user", "$pass");
 
     } catch (exception $erro) {
-        die("Erro de conexão com o bando de dados") .$erro;
+        die("Erro de conexão com o banco de dados") .$erro;
     }
 
     $query_qtd_alunos = $con->query("SELECT * FROM tb_alunos WHERE id_sala = '$sala'");
