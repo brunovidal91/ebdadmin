@@ -13,8 +13,8 @@
         <div class="img">LOGO</div>
         <div class="form-login">
             <form id="form-l" method="POST" action="autenticar.php">
-                <input type="email" name="email" id="email">
-                <input type="password" name="pass" id="pass">
+                <input type="email" name="email" id="email" placeholder="Email">
+                <input type="password" name="pass" id="pass" placeholder="Senha">
                 <input type="submit" value="Entrar">
             </form>
         </div>
