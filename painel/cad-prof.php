@@ -11,7 +11,7 @@ try{
     $query->bindValue(':nome', $nome_prof);
     $query->bindValue(':sobrenome', $sobrenome_prof);
     $query->execute();
-    header("location: painel.php");
+    header("location: painel/index.php");
 }catch(exception $e){
     die("Erro no banco de dados!" .$e);
 }

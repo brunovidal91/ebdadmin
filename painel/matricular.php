@@ -15,7 +15,7 @@ try{
     $query->bindValue(":sobrenome", "$sobrenome");
     $query->execute();
 
-    echo"<script>window.location.href='painel.php'</script>";
+    echo"<script>window.location.href='painel/index.php'</script>";
 
 
 }catch(exception $e){
