@@ -12,7 +12,7 @@
     <div class="container-login">
         <div class="img">LOGO</div>
         <div class="form-login">
-            <form id="form-l" method="POST" action="painel">
+            <form id="form-l" method="POST" action="autenticar.php">
                 <input type="email" name="email" id="email">
                 <input type="password" name="pass" id="pass">
                 <input type="submit" value="Entrar">
@@ -21,6 +21,6 @@
     </div>
     <div class="result">Teste</div>
     <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="js/ajax.js"></script>
+    <!-- <script src="js/ajax.js"></script> -->
 </body>
 </html>

@@ -2,7 +2,7 @@
 require_once("mysql/conect.php");
 
 $email = $_POST['email'];
-$senha = $_POST['senha'];
+$senha = $_POST['pass'];
 
 $query = $con->prepare("SELECT * FROM tb_usuarios WHERE email=:email AND senha=:senha");
 $query->bindValue(':email', $email);
@@ -19,15 +19,16 @@ if(count($res) > 0){
     $_SESSION['id'] = $res[0]['id_usuario'];
     $_SESSION['cargo'] = $res[0]['cargo'];
 
-    echo "<p style='color: green'>Bem Vindo!</p>";
+    // echo "<p style='color: green'>Bem Vindo!</p>";
 
     header("location: painel");
 
 }else if(strlen($email) == 0 || strlen($senha) == 0){
-
-    echo "<p style='color: red'>Todos os campos devem ser preenchidos</p>";
+    header("location: index.php");
+    // echo "<p style='color: red'>Todos os campos devem ser preenchidos</p>";
 
 }else{
-    echo "<p style='color: red'>Usuário Inválido</p>";
+    header("location: index.php");
+    // echo "<p style='color: red'>Usuário Inválido</p>";
     exit();
 }
