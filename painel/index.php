@@ -30,7 +30,7 @@ if(@$_GET["id_sala"] == ""){
         <nav>
             <div class="logo">LOGO</div>
             <div class="drop"></div>
-            <a href="#" id="popupActive"><label><?php echo $_SESSION['nome'] .' '.$_SESSION['sobrenome']; ?></label></a>
+            <a href="#" id="popupActive"><label><?php echo $_SESSION['nome'] .' '.$_SESSION['sobrenome'] .' '.'<br><small><small>'. $_SESSION['cargo'] .'</small></small>' ; ?></label></a>
         </nav>
     </header>
 
