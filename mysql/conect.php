@@ -1,10 +1,10 @@
 <?php
 
 
-$db = 'heroku_bbda86d3d577513';
+$db = 'heroku_51b5f2aa0c9d5f4';
 $host = 'us-cdbr-east-06.cleardb.net';
-$user = 'bee1e56bafcc7e';
-$pass = 'b7768602';
+$user = 'bfd0d7ce67ac0e';
+$pass = 'e06fdeaf';
 
 
 
@@ -40,9 +40,9 @@ $qtd = $query_qtd_alunos->fetchAll(PDO::FETCH_ASSOC);
 
 function alunos($sala){
     $host = 'us-cdbr-east-06.cleardb.net';
-    $user = 'bee1e56bafcc7e';
-    $pass = 'b7768602';
-    $db = 'heroku_bbda86d3d577513';
+    $user = 'bfd0d7ce67ac0e';
+    $pass = 'e06fdeaf';
+    $db = 'heroku_51b5f2aa0c9d5f4';
 
     try {
     
