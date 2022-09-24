@@ -21,7 +21,7 @@ if(count($res) > 0){
 
     echo "<p style='color: green'>Bem Vindo!</p>";
 
-    header("location: painel/index.php");
+    header("location: painel");
 
 }else if(strlen($email) == 0 || strlen($senha) == 0){
 
