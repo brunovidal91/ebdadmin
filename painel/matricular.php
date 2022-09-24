@@ -1,6 +1,6 @@
 <?php
 require_once("../mysql/conect.php");
-require_once("painel.php");
+require_once("index.php");
 
 $nome = $_POST['nome'];
 $sobrenome = $_POST['sobrenome'];

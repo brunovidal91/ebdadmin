@@ -1,8 +1,8 @@
 $(document).ready(function(){
-    listar_prof();
+    listar_prof2();
 });
 
-function listar_prof(){
+function listar_prof2(){
 
     $.ajax({
         url: 'modal-editar-prof.php',
