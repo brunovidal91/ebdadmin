@@ -90,6 +90,7 @@ header, nav{
     height: 60px;
     background-color: #1d3340;
     position: fixed;
+    z-index: 1000;
 }
 
 nav{
