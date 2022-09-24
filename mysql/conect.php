@@ -14,7 +14,7 @@ try {
     
     $con = new PDO("mysql:dbname=$db; host=$host", "$user", "$pass");
 
-} catch (exception $erro) {
+} catch (Exception $erro) {
     die("Erro de conexão com o bando de dados") .$erro;
 }
 
@@ -39,10 +39,10 @@ $query_qtd_alunos = $con->query("SELECT * FROM tb_alunos");
 $qtd = $query_qtd_alunos->fetchAll(PDO::FETCH_ASSOC);
 
 function alunos($sala){
-    $host = 'localhost';
-    $user = 'root';
-    $pass = '';
-    $db = 'ebdadmin';
+    $host = 'us-cdbr-east-06.cleardb.net';
+    $user = 'bee1e56bafcc7e';
+    $pass = 'b7768602';
+    $db = 'heroku_bbda86d3d577513';
 
     try {
     
