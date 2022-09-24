@@ -1,14 +1,11 @@
 <?php
 
-// $host = 'us-cdbr-east-06.cleardb.net';
-// $user = 'b85b23befdfd70';
-// $pass = 'c848e266';
-// $db = 'heroku_13b189c7583d61f';
 
-$host = 'localhost';
-$user = 'root';
-$pass = '';
-$db = 'igreja';
+$db = 'heroku_13b189c7583d61f';
+$host = 'us-cdbr-east-06.cleardb.net';
+$user = 'b85b23befdfd70';
+$pass = 'c848e266';
+
 
 
 date_default_timezone_set('America/Sao_Paulo');
