@@ -21,7 +21,7 @@ if(count($res) > 0){
 
     echo "<p style='color: green'>Bem Vindo!</p>";
 
-    echo "<script> window.location.href='painel/index.php' </script>";
+    header("location: painel/index.php");
 
 }else if(strlen($email) == 0 || strlen($senha) == 0){
 
@@ -29,4 +29,5 @@ if(count($res) > 0){
 
 }else{
     echo "<p style='color: red'>Usuário Inválido</p>";
+    exit();
 }

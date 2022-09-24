@@ -4,6 +4,6 @@ if(!isset($_SESSION)){
     @session_start();
 }
 
-if(!isset($_SESSION['id'])){
-    echo "<script> window.location.href='../index.php' </script>";
+if(!isset($_SESSION['email'])){
+    header("location: ../index.php");
 }

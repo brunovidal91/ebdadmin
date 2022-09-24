@@ -1,3 +1,8 @@
+<?php
+require_once("mysql/conect.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
