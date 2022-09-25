@@ -101,7 +101,6 @@ function closeModalEditProf(){
 
 btnEditUser.addEventListener('click', () => {
     modalEditUser.classList.toggle('active');
-    modalpopup.style.display = "none";
 });
 
 function closeModalEditUser(){
