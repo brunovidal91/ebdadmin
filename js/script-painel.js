@@ -4,7 +4,8 @@ const modalpopup = document.getElementById("modalpopup");
 const drop = document.querySelector('.drop');
 const modalEditProf = document.querySelector('.modal-edit-prof');
 const editProf = document.querySelector('.edit-prof');
-
+const modalEditUser = document.querySelector('.modal-info-user');
+const btnEditUser = document.querySelector('.info-user'); 
 
 drop.addEventListener('click', function(){
     drop.classList.toggle('active');
@@ -93,6 +94,18 @@ editProf.addEventListener('click', () => {
 
 function closeModalEditProf(){
     modalEditProf.classList.remove('active');
+
+
+}
+
+
+btnEditUser.addEventListener('click', () => {
+    modalEditUser.classList.toggle('active');
+    modalpopup.style.display = "none";
+});
+
+function closeModalEditUser(){
+    modalEditUser.classList.remove('active');
 
 
 }

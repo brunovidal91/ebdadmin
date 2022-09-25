@@ -101,12 +101,120 @@ nav{
 }
 
 
+.msg-edit{
+    width: 380px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(240, 235, 235);
+    margin-bottom: 5px;
+}
+
+.modal-info-user{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+    background-color: rgba(0,0,0,0.7);
+    transition: .8s;
+}
+
+.modal-info-user.active{
+    display: flex;
+}
+
+.win-edit-user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 380px;
+    height: 400px;
+    background-color:rgb(240, 235, 235);
+    position: relative;
+}
+
+.form-edit-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-edit-container form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .5rem;
+    padding: 10px;
+}
+
+.form-edit-container form div{
+    width: 50%;
+    flex-basis: 48%;
+}
+
+.form-edit-container form div:nth-child(4){
+    flex-basis: 100%;
+}
+
+.form-edit-container form:last-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color:rgb(240, 235, 235);
+}
+
+
+
+.form-edit-container form div input{
+   width: 100%;
+   height: 50px;
+   padding: 6px;
+   text-align: center;
+}
+
+.form-edit-container form div input[type="email"]{
+    width: 100%;
+}
+
+.editbutton{
+    width: 80px;
+    height: 40px;
+    padding: 10px;
+    background-color: #1d3340;
+    border: none;
+    border-radius: 10px;
+    color: #e9d636;
+    font-size: 1em;
+
+}
+
+.editbutton:hover{
+    background-color:#122029;
+    cursor: pointer;
+    transition: .5s;
+}
+
+
 
 .modalpopup{
     width: 100vw;
     height: 100vh;
     position: absolute;
     top: 0px;
+    z-index: 2000;
     background-color: rgba(0,0,0,0.0);
     display: none;
  
@@ -138,9 +246,15 @@ nav{
     padding: 10px;
 }
 
+.popup div a{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+}
+
 
 .popup a{
-    margin-left: 10px;
     text-decoration: none;
     color: white;
     margin-top: 10px;
@@ -157,19 +271,15 @@ nav{
 .popup .leave{
     background-color: #122029;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
+
+
 
 .edit-aluno a, .edit-prof a{
     width: 100%;
 
 }
-
-.edit-aluno span, .edit-prof span{
-    margin-left: 10px;
-    
-}
-
 
 
 
@@ -243,6 +353,7 @@ main{
     align-items: center;
     justify-content: center;
     transition: .5s;
+    z-index: 2000;
 }
 
 .win-matricular{
@@ -303,6 +414,7 @@ main{
     align-items: center;
     justify-content: center;
     transition: .5s;
+    z-index: 2000;
 }
 
 .win-cad-prof{
@@ -367,6 +479,7 @@ main{
     align-items: center;
     justify-content: center;
     transition: .5s;
+    z-index: 2000;
 }
 
 .win-cadastrar{
@@ -436,7 +549,7 @@ main{
     position: absolute;
     top:0;
     background-color: rgba(0, 0, 0, 0.7);
- 
+    z-index: 2000;
     display: none;
     opacity: 0;
     visibility: hidden;
@@ -468,7 +581,7 @@ main{
 
 }
 
-form{
+.form-container form{
     width: 90%;
     height: 100%;
     padding: 2px;
@@ -482,7 +595,7 @@ form{
 }
 
 
-form input, select{
+.form-container form input, select{
     width: 80%;
     padding: 8px;
     text-align: center;
@@ -491,12 +604,12 @@ form input, select{
 
 }
 
-form label{
+.form-container form label{
     margin-top: 10px;
     margin-bottom: 5px;
 }
 
-form input[type="submit"]{
+.form-container form input[type="submit"]{
     margin: 150px auto;
     background-color:  #1d3340;
     color: #e9d636;
@@ -507,7 +620,7 @@ form input[type="submit"]{
     padding: 5px;
 }
 
-form input[type="submit"]:hover{
+.form-container form input[type="submit"]:hover{
     cursor: pointer;
     opacity: 0.85;
     transition: .5s;
@@ -542,6 +655,7 @@ form input[type="submit"]:hover{
     position: absolute;
     top: 0;
     display: none;
+    z-index: 2000;
 
 }
 
@@ -631,7 +745,7 @@ form input[type="submit"]:hover{
         width: 100%;
     }
 
-    form{
+    .form-container form{
 
         justify-content: center;
         align-items: center;
@@ -641,7 +755,7 @@ form input[type="submit"]:hover{
         gap: 0
     }
 
-    form input, select{
+    .form-container form input, select{
         margin: 10px auto;
         width: 100%;
         padding: 8px;
@@ -651,7 +765,7 @@ form input[type="submit"]:hover{
     }
 
 
-    form label{
+    .form-container form label{
         margin: 3px auto;
     }
 

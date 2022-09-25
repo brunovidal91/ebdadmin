@@ -30,7 +30,7 @@ if(@$_GET["id_sala"] == ""){
         <nav>
             <div class="logo">LOGO</div>
             <div class="drop"></div>
-            <a href="#" id="popupActive"><label><?php echo $_SESSION['nome'] .' '.$_SESSION['sobrenome'] .' '.'<br><small><small>'. $_SESSION['cargo'] .'</small></small>' ; ?></label></a>
+            <a href="#" id="popupActive"><label id="nm_user"></label></a>
         </nav>
     </header>
 
@@ -120,6 +120,9 @@ if(@$_GET["id_sala"] == ""){
                 <a href="#"><img src="../img/edit.png" width="25"><span>Editar Professor</span></a>
             </div>
 
+            <div class="info-user">
+                <a href="#"><img src="../img/invoice.png" width="25"><span> Minhas Informações</span></a>
+            </div>
 
 
 
@@ -226,6 +229,51 @@ if(@$_GET["id_sala"] == ""){
 
     <div class="modal-edit-prof">
         <div class="win-edit-prof"></div>
+    </div>
+
+
+    <div class="modal-info-user">
+
+        <div class="win-edit-user">
+        
+            <div class="form-edit-container">
+                <form id="edit_user">
+                    
+                    <input type="hidden" id="id_edit_user" name="id_usuario" value="<?php echo $_SESSION['id'] ?>">
+                    <div>
+                        <label for="nome_edit_user">Nome</label>
+                        <input type="text" id="nome_edit_user" name="nome_usuario" value="<?php echo $_SESSION['nome'] ?>">
+                    </div>
+
+                    <div>
+                        <label for="sobrenome_edit_user">Sobrenome</label>
+                        <input type="text" id="sobrenome_edit_user" name="sobrenome_usuario" value="<?php echo $_SESSION['sobrenome'] ?>">
+                    </div>
+
+                    <div>
+                        <label for="email_edit_user">Email</label>
+                        <input type="email" id="email_edit_user"  value="<?php echo $_SESSION['email'] ?>">
+                    </div>
+
+                    <div>
+                        <label for="senha_edit_user">Senha</label>
+                        <input type="password" id="senha_edit_user"  value="<?php echo$_SESSION['senha']?>">
+                    </div>
+
+                    <div>
+                        <label for="confirm_senha_edit_user">Confirmar senha</label>
+                        <input type="password" id="confirm_senha_edit_user">
+                    </div>
+
+                    <div class="btn-edit-container">
+                        <input type="submit" value="Editar" class="editbutton"> 
+                    </div>
+                </form>
+            </div>
+        
+        <a href="#" onclick="closeModalEditUser()" class="close-button">X</a>
+        </div>
+        <div class="msg-edit"></div>
     </div>
 
 </body>

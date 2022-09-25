@@ -16,7 +16,7 @@
 
 }
 
-form{
+.form-container-cad-prof form{
     width: 90%;
     height: 100%;
     padding: 2px;
@@ -30,7 +30,7 @@ form{
 }
 
 
-form input, select{
+.form-container-cad-prof form input, select{
     width: 80%;
     padding: 8px;
     text-align: center;
@@ -39,12 +39,12 @@ form input, select{
 
 }
 
-form label{
+.form-container-cad-prof form label{
     margin-top: 10px;
     margin-bottom: 5px;
 }
 
-form input[type="submit"]{
+.form-container-cad-prof form input[type="submit"]{
     margin: 150px auto;
     background-color:  #1d3340;
     color: #e9d636;
@@ -55,7 +55,7 @@ form input[type="submit"]{
     padding: 5px;
 }
 
-form input[type="submit"]:hover{
+.form-container-cad-prof form input[type="submit"]:hover{
     cursor: pointer;
     opacity: 0.85;
     transition: .5s;
@@ -89,7 +89,7 @@ form input[type="submit"]:hover{
         width: 100%;
     }
 
-    form{
+    .form-container-cad-prof form{
 
         justify-content: center;
         align-items: center;
@@ -99,7 +99,7 @@ form input[type="submit"]:hover{
         gap: 0
     }
 
-    form input, select{
+    .form-container-cad-prof form input, select{
         margin: 12px auto;
         width: 90%;
         padding: 8px;
@@ -108,18 +108,18 @@ form input[type="submit"]:hover{
 
     }
 
-    form input[type="text"]{
+    .form-container-cad-prof form input[type="text"]{
 
         width: 85%;
 
     }
 
-    form label{
+    .form-container-cad-prof form label{
         margin: 3px auto;
     }
 
 
-    form input[type="submit"]{
+    .form-container-cad-prof form input[type="submit"]{
         margin: 20px auto;
         background-color:  #1d3340;
         color: #e9d636;
