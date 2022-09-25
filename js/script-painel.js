@@ -86,11 +86,11 @@ function closeModalCadastrar(){
 
 }
 
-editProf.addEventListener('click', () => {
-    modalEditProf.classList.toggle('active');
-    modalpopup.style.display = "none";
+// editProf.addEventListener('click', () => {
+//     modalEditProf.classList.toggle('active');
+//     modalpopup.style.display = "none";
 
-});
+// });
 
 function closeModalEditProf(){
     modalEditProf.classList.remove('active');
