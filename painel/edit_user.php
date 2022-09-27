@@ -39,7 +39,7 @@ else if(count($res) > 0 AND $res[0]['id_usuario'] != $id){
 
 else{
 
-    $query_up = $con->prepare("UPDATE tb_usuarios SET nome=:nome, sobrenome=:sobrenome, email=:email, senha=:senha");
+    $query_up = $con->prepare("UPDATE tb_usuarios SET nome=:nome, sobrenome=:sobrenome, email=:email, senha=:senha WHERE id_usuario = $id");
     $query_up->bindValue(":nome", $nome);
     $query_up->bindValue(":sobrenome", $sobrenome);
     $query_up->bindValue(":email", $email);

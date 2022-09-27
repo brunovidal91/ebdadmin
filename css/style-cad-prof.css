@@ -109,7 +109,6 @@
     }
 
     .form-container-cad-prof form input[type="text"]{
-
         width: 85%;
 
     }
@@ -124,8 +123,8 @@
         background-color:  #1d3340;
         color: #e9d636;
         border-radius: 10px;
-        width: 60%;
-        height: 50px;
+        width: 120px;
+        height: 80px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: .9em;
     }

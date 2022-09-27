@@ -1,6 +1,8 @@
 $(document).ready(function(){
     listar_prof2();
     alt_user();
+    regraCargo();
+
 });
 
 function listar_prof2(){
@@ -45,4 +47,51 @@ function alt_user(){
             $('#nm_user').html(result);
         }
     });
+}
+
+$('#form_cadastrar').on('submit', (e) => {
+    e.preventDefault();
+
+    $.ajax({
+        url: 'cadastrar.php',
+        type: 'POST',
+        data: {
+            nome: $('#nome_cadastro').val(),
+            sobrenome: $('#sobrenome_cadastro').val(),
+            email: $('#email_cadastro').val(),
+            senha: $('#senha_cadastro').val(),
+            conf_senha: $('#conf_senha_cadastro').val(),
+            cargo: $('#cargo_cadastro').val()
+        },
+        success: function(result){
+            $('#msg_cadastrar').html(result);
+            $('#form_cadastrar')[0].reset();
+        },
+
+        error: function(result, status, error){
+            $('#msg_cadastrar').html(result);
+        }
+    });
+});
+
+
+function regraCargo(){
+
+    const cadProf = document.querySelector(".cad-prof");
+    const cadUser = document.querySelector(".cad-user");
+    const editProfessor = document.querySelector(".edit-prof");
+
+
+    if(cargo == 'Professor'){
+        editProfessor.style.display = "none";
+        cadProf.style.display = "none";
+        cadUser.style.display = "none";
+    }
+
+    else if(cargo == 'Secretario'){
+
+        editProfessor.style.display = "none";
+        cadUser.style.display = "none";
+    }
+
 }

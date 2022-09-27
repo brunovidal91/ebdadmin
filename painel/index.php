@@ -8,7 +8,7 @@ if(@$_GET["id_sala"] == ""){
     $id_sala = $_GET["id_sala"];
 }
 
-
+$cargo = $_SESSION['cargo'];
 
 ?>
 
@@ -221,10 +221,48 @@ if(@$_GET["id_sala"] == ""){
 
 
     <div class="modal-cadastrar" id="modal-cadastrar">
+        
         <div class="win-cadastrar" id="win-cadastrar">
-            <?php require_once("cadastrar.php") ?>
+            <form id="form_cadastrar">
+                <div>
+                    <label for="nome_cadastro">Nome</label>
+                    <input type="text" id="nome_cadastro" autofocus>
+                </div>
+                <div>
+                    <label for="sobrenome_cadastro">Sobreome</label>
+                    <input type="text" id="sobrenome_cadastro">
+                </div>
+                <div>
+                    <label for="email_cadastro">Email</label>
+                    <input type="email" id="email_cadastro">
+                </div>
+                <div>
+                    <label for="senha_cadastro">Senha</label>
+                    <input type="password" id="senha_cadastro">
+                </div>
+                <div>
+                    <label for="conf_senha_cadastro">Confirmar Senha</label>
+                    <input type="password" id="conf_senha_cadastro">
+                </div>
+                <div>
+                    <label for="cargo_cadastro">Tipo de Acesso</label>
+                    <select id="cargo_cadastro">
+                        <option value="Secretario">Secretario</option>
+                        <option value="Professor">Professor</option>
+                        <option value="Coordenador">Coordenador</option>
+                        <option value="Pastor">Pastor</option>
+                        <option value="Administrador">Administrador</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="submit" value="Cadastrar">
+                </div>
+            </form>
             <a href="#" onclick="closeModalCadastrar()" class="close-button2">X</a>
+            
         </div>
+        <div class="msg_cadastrar" id="msg_cadastrar"></div>
+    
     </div>
 
     <div class="modal-edit-prof">
@@ -278,8 +316,12 @@ if(@$_GET["id_sala"] == ""){
 
 </body>
 
+<script>
+    const cargo = "<?= $cargo ?>";
+</script>
 <script type="text/javascript" src="../js/script-painel.js"></script>
 <script src="http://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="../js/ajax-listar.js"></script>
+
 
 </html>
