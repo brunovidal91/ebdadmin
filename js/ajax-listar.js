@@ -65,7 +65,12 @@ $('#form_cadastrar').on('submit', (e) => {
         },
         success: function(result){
             $('#msg_cadastrar').html(result);
-            $('#form_cadastrar')[0].reset();
+ 
+            if(result == "<p style='color: green'>Usuário cadastrado com sucesso!</p>"){
+                $('#form_cadastrar')[0].reset();
+            }
+            
+           
         },
 
         error: function(result, status, error){
