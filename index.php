@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container-login">
-        <div class="img">LOGO</div>
+        <div class="img"><img src="img/logo_biblia.png" width="100"> <span>EBD Jd. Pinheiros</span></div>
         <div class="form-login">
             <form id="form-l" method="POST" action="autenticar.php">
                 <input type="email" name="email" id="email" placeholder="Email">

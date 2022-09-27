@@ -31,7 +31,7 @@ if($res > 0){
 <body>
     <header>
         <nav>
-        <div class="logo"><a href="index.php">LOGO</a></div>
+        <div class="logo"><a href="index.php"><img src="../img/logo_header.png"></a></div>
             <div class="name-sala"><Label><?php echo $nome_sala ?></Label></div>
             <a href="#" id="popupActive_salas" class="popupActive_salas"><label><?php echo $_SESSION['nome'] .' '.$_SESSION['sobrenome'] ?></label></a>
         

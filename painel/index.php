@@ -28,7 +28,7 @@ $cargo = $_SESSION['cargo'];
 
     <header>
         <nav>
-            <div class="logo">LOGO</div>
+        <div class="logo"><a href="index.php"><img src="../img/logo_header.png"></a></div>
             <div class="drop"></div>
             <a href="#" id="popupActive"><label id="nm_user"></label></a>
         </nav>
