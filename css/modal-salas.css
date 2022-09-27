@@ -19,8 +19,6 @@ body{
 .logo{
     width: 113px;
     height: 50px;
-    text-align: center;
-    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,9 +27,9 @@ body{
 }
 
 .logo a{
+    padding: 10px;
     width: 113px;
     height: 50px;
-    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -366,6 +364,7 @@ main{
 }
 
 .content-lista-alunos form{
+    width: 60%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -377,8 +376,8 @@ main{
     display: flex;
     align-items: center;
     margin-top: 20px;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: space-between;
+    gap: .5rem;
     border-bottom: 1px solid #ccc; 
 }
 
@@ -397,8 +396,8 @@ main{
 
 
 .cb{
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     float: right;
     margin-left: 5px;
     border-radius: 50%;
@@ -455,13 +454,43 @@ main{
     display: flex;
     width: 80%;
     justify-content: space-between;
+    background-color: #1d3340;
+    color: white;
+    gap: .5rem;
 }
 
-.legenda label{
-    width: 150px;
+.legenda input{
+    width: 200px;
     margin-left: 10px;
     padding: 8px;
     text-align: center;
+    border: none;
+    background-color: #1d3340;
+    color: white;
+}
+
+.legenda_device{
+    display: none;
+    width: 80%;
+    justify-content: space-between;
+    background-color: #1d3340;
+    color: white;
+    border-radius: 10px;
+}
+
+.legenda_device input{
+    flex-basis: 70%;
+    margin-left: 10px;
+    padding: 8px;
+    text-align: center;
+    border: none;
+    background-color: #1d3340;
+    color: white;
+    
+}
+
+.legenda_device:first-child{
+    flex-basis: 20%;
 }
 
 
@@ -473,10 +502,19 @@ main{
         display: none;
     }
 
+    .legenda_device{
+        display: flex;
+    }
+
     .content-lista-alunos{
         justify-content: flex-start;
         width: 100%;
         padding: 0;
+
+    }
+
+    .content-lista-alunos form{
+        width: 100%;
 
     }
     .alt{
@@ -496,13 +534,15 @@ main{
    }
 
     .cb{
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
     }
 
     .item-list input[type="text"]{
         width: 180px;
         margin-left: 2px;
+        background-color: none;
+        color: black;
     
     }
 

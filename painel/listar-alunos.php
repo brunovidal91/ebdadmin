@@ -11,10 +11,14 @@ $qtd = count($res);
 echo <<<HTML
 <form>
     <div class="legenda">
-    <label>Nome</label>
-    <label>Nascimento</label>
-    <label>Matricula</label>
-    <label>Presença/Bíblia/Revista</label>
+    <input type="text" value="Nome" disabled>
+    <input type="text" value="Nascimento" disabled>
+    <input type="text" value="Matricula" disabled>
+    <input type="text" value="Presença / Biblia / Revista" disabled>
+    </div>
+    <div class="legenda_device">
+    <input type="text" value="Nome" disabled>
+    <input type="text" value="Presença / Biblia / Revista" disabled>
     </div>
 HTML;
 
@@ -39,7 +43,7 @@ echo <<<HTML
 <input type="checkbox" class="cb biblia">
 <input type="checkbox" class="cb revista">
 
-<ul>
+<!-- <ul>
 
 <li><a href="#!" title="Editar aluno" class="link-edit"><img src="../img/edit.png" width="20px"></a>
 </li>
@@ -49,7 +53,7 @@ echo <<<HTML
 <li><a href="#!" title="Excluir aluno"class="link-delete"><img src="../img/delete.png" width="20px"></a>
 </li>
 
-</ul>
+</ul> -->
 </div>
 
 HTML;
