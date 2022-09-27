@@ -10,6 +10,11 @@ $senha = $_POST['senha'];
 $conf_senha = $_POST['conf_senha'];
 $cargo = $_POST['cargo'];
 
+$query_email = $con->prepare("SELECT * FROM tb_usuarios WHERE email=:email");
+$query_email->bindValue(":email", $email);
+$query_email->execute();
+$res = $query_email->fetchAll(PDO::FETCH_ASSOC);
+
 
 function msgPositive($msg){
     $estilo = "<p style='color: green'>$msg</p>";
@@ -29,9 +34,15 @@ if(strlen($nome) == 0 || strlen($email) == 0 || strlen($senha) == 0){
     
 }
 
+else if(count($res) > 0){
+    echo msgNegative('Email já existente no banco de dados');
+}
+
 else if($senha != $conf_senha){
     echo msgNegative('As senhas não conferem');
 }
+
+
 
 else{
     
