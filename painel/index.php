@@ -18,9 +18,10 @@ $cargo = $_SESSION['cargo'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EBD-Admin - Painel Administrativo</title>
     <link rel="stylesheet" href="../css/style-painel.css">
     <link rel="stylesheet" href="../css/style-cad-prof.css">
+    <link rel="shortcut icon" href="../img/logo_biblia.png">
+    <title>EBD-Admin - Painel Administrativo</title>
     
 
 </head>

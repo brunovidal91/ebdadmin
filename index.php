@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/logo_biblia.png">
     <title>Login</title>
 </head>
 <body>
     <div class="container-login">
-        <div class="img"><img src="img/logo_biblia.png" width="100"> <span>EBD Jd. Pinheiros</span></div>
+        <div class="img"><img src="img/logo_biblia.png" width="90"> <span>EBD Jd. Pinheiros</span></div>
         <div class="form-login">
             <form id="form-l" method="POST" action="autenticar.php">
                 <input type="email" name="email" id="email" placeholder="Email">
