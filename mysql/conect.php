@@ -42,7 +42,7 @@ $query_qtd_alunos = $con->query("SELECT * FROM tb_alunos");
 $qtd = $query_qtd_alunos->fetchAll(PDO::FETCH_ASSOC);
 
 function alunos($sala){
-    $url = parse_url(getenv("CLEARDB_DATABASE_URL"))
+    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
     $db = substr($url['path'], 1);
     $host = $url['host'];
     $user = $url['user'];
