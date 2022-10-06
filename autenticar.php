@@ -22,9 +22,7 @@ if(count($res) > 0){
     // echo "<p style='color: green'>Bem Vindo!</p>";
 
     
-    $query = null;
-    $con = null;
-    
+
     header("location: painel");
 
 }else if(strlen($email) == 0 || strlen($senha) == 0){
