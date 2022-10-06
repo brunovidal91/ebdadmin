@@ -54,6 +54,9 @@ else{
     $query->bindValue(':cargo', $cargo);
     $query->execute();
 
+    
+    $query = null;
+    $con = null;
 
     echo msgPositive('Usuário cadastrado com sucesso!');
 }

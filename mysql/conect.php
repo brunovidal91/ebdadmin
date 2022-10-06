@@ -1,11 +1,13 @@
 <?php
 
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"))
+$db = substr($url['path'], 1);
+$host = $url['host'];
+$user = $url['user'];
+$pass = $url['pass'];
 
-$db = 'heroku_51b5f2aa0c9d5f4';
-$host = 'us-cdbr-east-06.cleardb.net';
-$user = 'bfd0d7ce67ac0e';
-$pass = 'e06fdeaf';
-
+$active_group = 'default';
+$query_builder = TRUE;
 
 
 date_default_timezone_set('America/Sao_Paulo');
@@ -40,10 +42,11 @@ $query_qtd_alunos = $con->query("SELECT * FROM tb_alunos");
 $qtd = $query_qtd_alunos->fetchAll(PDO::FETCH_ASSOC);
 
 function alunos($sala){
-    $host = 'us-cdbr-east-06.cleardb.net';
-    $user = 'bfd0d7ce67ac0e';
-    $pass = 'e06fdeaf';
-    $db = 'heroku_51b5f2aa0c9d5f4';
+    $url = parse_url(getenv("CLEARDB_DATABASE_URL"))
+    $db = substr($url['path'], 1);
+    $host = $url['host'];
+    $user = $url['user'];
+    $pass = $url['pass'];
 
     try {
     

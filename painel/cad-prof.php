@@ -11,6 +11,10 @@ try{
     $query->bindValue(':nome', $nome_prof);
     $query->bindValue(':sobrenome', $sobrenome_prof);
     $query->execute();
+
+    $query = null;
+    $con = null;
+
     header("location: index.php");
 }catch(exception $e){
     die("Erro no banco de dados!" .$e);

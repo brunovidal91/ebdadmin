@@ -15,6 +15,10 @@ try{
     $query->bindValue(":sobrenome", "$sobrenome");
     $query->execute();
 
+    
+    $query = null;
+    $con = null;
+
     header("location: index.php");
 
 

@@ -46,6 +46,10 @@ else{
     $query_up->bindValue(":senha", $senha);
     $query_up->execute();
 
+    
+    $query = null;
+    $con = null;
+
     echo msgPositive("Dados alterados com sucesso!");
 }
     
